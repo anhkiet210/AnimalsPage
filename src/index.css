@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* height: 100vh; */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.animaton-image {
+  animation: move 4s infinite;
+  transition: all 0.7s linear;
+}
+@keyframes move {
+  0% {
+    transform: translateY(25%);
+  }
+
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(25%);
+  }
+}
+
+@layer components {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded;
+  }
+
+  .logo {
+    font-family: "Pacifico", cursive;
+  }
+  .active {
+    background: -webkit-linear-gradient(#380c7f, #6922fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .form-input {
+    @apply p-2 text-[14px];
+  }
+  .form-input input,
+  .form-input textarea {
+    @apply outline-none focus:outline-none border-gray-300 border rounded px-4 py-2 my-2 w-full resize-none;
+  }
+  .sidebar-list {
+    @apply ml-4;
+  }
+  .sidebar-item {
+    @apply flex items-center mb-4 cursor-pointer text-purple-gradient;
+  }
+  .post-table_item {
+    @apply border border-slate-700 px-6 py-2;
+  }
+  .search-input {
+    @apply w-full outline-none focus:outline-none border-[2px] border-gray-400 rounded-t text-sm px-4 py-2 focus:border-purple-gradient ease-linear duration-200 pl-[40%];
+  }
+  .search-icon {
+    @apply cursor-pointer w-5 h-5 absolute right-4 top-2 text-gray-400;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
